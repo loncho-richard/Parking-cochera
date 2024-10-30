@@ -1,0 +1,16 @@
+<main>
+    <div id="izquierda">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <input type="text" id="username" placeholder="Usuario" name="username" ngModel required>
+            <input type="password" id="password" placeholder="Contraseña" name="password" ngModel required>
+            <button class="boton-resaltado" type="submit">Iniciar sesión</button>
+            @if(errorLogin) {
+                <p>Error en login</p>
+            }
+        </form>
+        <a [routerLink]="['/register']">Registrarse</a>
+    </div>
+    <div id ="derecha">
+        <h1>App para cocheras</h1>
+    </div>
+</main>

@@ -1,0 +1,99 @@
+@use "./../../../../public/styles/colors.scss";
+
+h1{
+    font-size: 65px;
+    color: white;
+    z-index: 1;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100svh;
+}
+
+#izquierda{
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    align-items: center;
+}
+
+#derecha{
+    /* background-image: url("./../../../../public/img/cochera.webp"); */
+    background-color: #cc6600;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: colors.$color-primario;
+        opacity: 75%;
+        height: 100%;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button{
+        margin-top: 10px;
+    }
+}
+
+input{
+    border-bottom: 1px solid colors.$color-primario;
+    font-size: 2rem;
+    text-align: center;
+    max-width: 220px;
+    
+    &::placeholder {
+        font-size: 1.5rem;
+    }
+}
+
+
+a{
+    text-align: center;
+}
+
+
+@media (width < 820px) {
+    h1{
+        font-size: 50px;
+    }
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px auto;
+    }
+    #derecha{
+        margin-top: 1rem;
+        align-items: start;
+    }
+    form{
+        justify-content: space-between;
+    }
+}
+
+.boton-resaltado {
+    background-color: colors.$color-primario; /* Color cuando está habilitado */
+    color: white;
+    padding: 10px 23px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #cc6600;
+    }
+    /* &:disabled {
+        background-color: lightgray; 
+        color: darkgray; 
+        cursor: not-allowed;
+    } */
+}

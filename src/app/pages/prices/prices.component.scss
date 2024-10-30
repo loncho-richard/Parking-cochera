@@ -1,0 +1,51 @@
+@use "../../../../public/styles/colors.scss";
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+  
+  table.pricing-table {
+    width: 80%; // Ajusta el ancho según sea necesario
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  table.pricing-table th, 
+  table.pricing-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; // Línea separadora entre filas
+  }
+  
+  table.pricing-table th {
+    background-color: #f5f5f5; // Fondo de los encabezados
+    font-weight: bold;
+    font-size: 1rem;
+    color: colors.$color-primario;
+  }
+  
+  table.pricing-table td {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  table.pricing-table tr:hover {
+    background-color: #f9f9f9; // Efecto hover en filas
+  }
+  
+  table.pricing-table tbody tr:last-child td {
+    border-bottom: none; // Quitar borde inferior de la última fila
+  }
+  
+  table.pricing-table td:nth-child(3) {
+    text-align: right; // Alinear precios a la derecha
+    font-weight: bold;
+  }
+
+  

@@ -1,0 +1,43 @@
+  <main class="flex-column-center">
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th class="titulos">Tipo de Vehículo</th>
+          <th class="titulos">Tiempo</th>
+          <th class="titulos">Precio</th>
+          <th class="titulos">Modificar</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (price of pricesService.Fees; track price.id) {
+          <tr>
+            <td>
+              @if (price.id == "MEDIAHORA") {
+                Medio Hora
+              } @else if (price.id == "PRIMERAHORA") {
+                Primera Hora
+              } @else {
+                Más de 60 min
+              }
+            </td>
+            <td>
+              @if (price.id == "MEDIAHORA") {
+                <= 30 min
+              } @else if (price.id == "PRIMERAHORA") {
+                <= 60 min
+              } @else {
+                > 60 min * Hs
+              }
+            </td>
+            <td>
+              ${{ price.valor }},00 
+            </td>
+            <td>
+                <button (click)="editPrice(price.id)">Editar </button>
+            </td>
+          </tr>
+          
+        }
+      </tbody>
+    </table>
+  </main>
