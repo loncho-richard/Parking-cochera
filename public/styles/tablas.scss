@@ -2,6 +2,10 @@
 
 table{
   margin: 20px auto;
+  background-color: #e0e0e0;
+  box-shadow: 1px 1px 2px 1px rgba(3, 3, 4, 0.03);
+  padding: 4px;
+  border-radius: 1rem;
   thead, tr {
       display: grid;
       grid-template-columns: 50px 1fr 1fr 1fr;
@@ -9,7 +13,7 @@ table{
       justify-items: center;
       align-items: center;
       height: 50px;
-      border-bottom: 1px solid colors.$color-texto;
+      border-bottom: 0.5px solid colors.$color-texto;
   }
   thead{
     font-weight: bold;
